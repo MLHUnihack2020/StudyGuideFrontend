@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Test"/>
+    <ContentSubmit />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ContentSubmit from './components/ContentSubmit.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ContentSubmit
   }
 }
 </script>
