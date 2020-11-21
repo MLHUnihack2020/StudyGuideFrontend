@@ -35,9 +35,11 @@ export default {
     },
     next: function () {
       this.cardNumber++;
+      this.cardSide = 0;
     },
     previous: function () {
       this.cardNumber--;
+      this.cardSide = 0;
     }
   }
 }
