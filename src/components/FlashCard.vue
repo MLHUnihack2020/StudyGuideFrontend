@@ -9,6 +9,7 @@
         <button class="p-5" v-on:click="previous">Previous</button>
         <button class="p-5" v-on:click="flip">Flip</button>
         <button class="p-5" v-on:click="next">Next</button>
+        <button class="p-5" v-on:click="shuffle">Shuffle</button>
         <button class="p-5 pl-10" v-if="this.hintUsed === false && this.cardSide == 0" v-on:click="hint">Stuck? Get a hint.</button>
       </div>
     </div>
@@ -37,6 +38,7 @@ export default {
       if (this.cardNumber + 1 < this.$parent.flashcards.length) {
         this.cardNumber++;
         this.cardSide = 0;
+        console.log("this")
       }
     },
     previous: function () {
@@ -54,6 +56,20 @@ export default {
       let newQuestion = question.substr(0, hintLetterLocation) + hintLetter + question.substr(hintLetterLocation, question.length)
       this.$parent.flashcards[this.cardNumber].question = newQuestion;
       this.hintUsed = true;
+    },
+    shuffle: function() {
+      console.log(this.$parent.flashcards)
+      var m = this.$parent.flashcards.length, t, i;
+      console.log(m);
+      while (m) {
+
+        i = Math.floor(Math.random() * m--);
+
+        t = this.$parent.flashcards[m];
+        this.$parent.flashcards[m] = this.$parent.flashcards[i];
+        this.$parent.flashcards[i] = t;
+        console.log(i + " " + m)
+      }
     }
   }
 }
