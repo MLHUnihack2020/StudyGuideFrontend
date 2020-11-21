@@ -18,7 +18,7 @@ export default {
     sendRequest: function () {
       const input = this.$parent.inputText;
 
-      const endpoint = "https://api.studygenerator.com/";
+      const endpoint = "https://studyguide-backend-nwitjszpka-ue.a.run.app/";
       // const endpoint = "http://localhost:8080/";
 
       const jsonBody = { text: input };
