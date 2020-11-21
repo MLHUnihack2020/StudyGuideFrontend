@@ -34,7 +34,22 @@ export default {
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
-        this.$parent.flashcards = data.flashcards
+
+        let tempFlashcards = data.flashcards;
+
+        for (let i = 0; i < tempFlashcards.length; i++) {
+          let blankSize = tempFlashcards[i].answer.length;
+          let blankSpot = "{" + blankSize + "}";
+
+          let blanks = "";
+          for (let j = 0; j < blankSize; j++) {
+            blanks = blanks + "_";
+          }
+
+          tempFlashcards[i].question = tempFlashcards[i].question.replace(blankSpot, blanks);
+        }
+
+        this.$parent.flashcards = tempFlashcards;
       })
       .catch((error) => {
         console.error('Error:', error);
