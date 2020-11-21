@@ -15,16 +15,10 @@ export default {
   data() {
     return {
       inputText: "",
-      flashcards: {
-        "0": {
-          question: "this is a test 1",
-          answer: "answer 1"
-        },
-        "1": {
-          question: "this is a test 2",
-          answer: "answer 2"
-        },
-      }
+      flashcards: [
+        { question: "this is a test 1", answer: "answer 1" },
+        { question: "this is a test 2", answer: "answer 2" }
+      ]
     }
   },
   components: {
