@@ -1,9 +1,13 @@
 <template>
   <div class="">
-    <p>Paste in your text that you want to study below:</p>
+    <p class="my-5 text-lg">Paste in your text that you want to study below:</p>
 
-    <textarea id="inputText" name="inputText" v-model="$parent.inputText"></textarea>
-    <button v-on:click="sendRequest">Submit</button>
+    <div>
+      <textarea class="shadow-lg p-5 rounded-lg" id="inputText" name="inputText" rows="10" cols="75" v-model="$parent.inputText"></textarea>
+    </div>
+    <div>
+      <button class="text-lg shadow-md px-3 py-2 rounded-lg font-bold m-10" v-on:click="sendRequest">Submit</button>
+    </div>
   </div>
 </template>
 

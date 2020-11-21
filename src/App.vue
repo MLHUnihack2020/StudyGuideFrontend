@@ -1,8 +1,12 @@
 <template>
-  <div id="app">
-    <h1 class="text-5xl font-bold">Study Guide App</h1>
-    <ContentSubmit />
-    <FlashCard v-if="flashcards !== null" />
+  <div class="m-16 flex" id="app">
+    <div>
+      <h1 class="text-6xl font-bold">Studyguide Generator</h1>
+      <ContentSubmit />
+    </div>
+    <div>
+      <FlashCard v-if="flashcards !== null" />
+    </div>
   </div>
 </template>
 
