@@ -9,6 +9,7 @@
         <button class="p-5" v-on:click="previous">Previous</button>
         <button class="p-5" v-on:click="flip">Flip</button>
         <button class="p-5" v-on:click="next">Next</button>
+        <button class="p-5 pl-10" v-on:click="hint">Stuck? Get a hint.</button>
       </div>
     </div>
   </div>
@@ -26,7 +27,6 @@ export default {
   },
   methods: {
     flip: function () {
-      this.cardText = "ye";
       if (this.cardSide == 0) {
         this.cardSide = 1;
       } else {
@@ -40,6 +40,15 @@ export default {
     previous: function () {
       this.cardNumber--;
       this.cardSide = 0;
+    },
+    hint: function () {
+      let hintLetter = this.$parent.flashcards[this.cardNumber].answer.charAt(0);
+      let hintLetterLocation = this.$parent.flashcards[this.cardNumber].question.indexOf('_');
+
+      let question = this.$parent.flashcards[this.cardNumber].question
+
+      let newQuestion = question.substr(0, hintLetterLocation) + hintLetter + question.substr(hintLetterLocation, question.length)
+      this.$parent.flashcards[this.cardNumber].question = newQuestion;
     }
   }
 }
