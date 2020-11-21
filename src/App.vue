@@ -2,7 +2,7 @@
   <div id="app">
     <h1 class="text-5xl font-bold">Study Guide App</h1>
     <ContentSubmit />
-    <FlashCard />
+    <FlashCard v-if="flashcards !== null" />
   </div>
 </template>
 
@@ -15,13 +15,7 @@ export default {
   data() {
     return {
       inputText: "",
-      flashcards: [
-        { question: "this is a test 1", answer: "answer 1" },
-        { question: "this is a test 2", answer: "answer 2" },
-        { question: "this is a test 3", answer: "answer 3" },
-        { question: "this is a test 4", answer: "answer 4" },
-        { question: "this is a test 5", answer: "answer 5" },
-      ]
+      flashcards: null
     }
   },
   components: {

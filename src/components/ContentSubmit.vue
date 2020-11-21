@@ -14,8 +14,8 @@ export default {
     sendRequest: function () {
       const input = this.$parent.inputText;
 
-      // const endpoint = "https://studyguide-backend-nwitjszpka-ue.a.run.app/";
-      const endpoint = "http://localhost:8080/";
+      const endpoint = "https://studyguide-backend-nwitjszpka-ue.a.run.app/";
+      // const endpoint = "http://localhost:8080/";
 
       const jsonBody = { text: input };
       const stringed = JSON.stringify(jsonBody);
@@ -25,11 +25,12 @@ export default {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(stringed),
+        body: stringed,
       })
       .then(response => response.json())
       .then(data => {
         console.log('Success:', data);
+        this.$parent.flashcards = data.flashcards
       })
       .catch((error) => {
         console.error('Error:', error);
