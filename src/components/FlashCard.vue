@@ -20,7 +20,6 @@ export default {
   name: 'FlashCard',
   data() {
     return {
-      cardText: "",
       cardNumber: 0,
       cardSide: 0
     }
