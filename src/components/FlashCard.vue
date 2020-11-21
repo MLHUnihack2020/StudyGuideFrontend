@@ -33,12 +33,16 @@ export default {
       }
     },
     next: function () {
-      this.cardNumber++;
-      this.cardSide = 0;
+      if (this.cardNumber + 1 < this.$parent.flashcards.length) {
+        this.cardNumber++;
+        this.cardSide = 0;
+      }
     },
     previous: function () {
-      this.cardNumber--;
-      this.cardSide = 0;
+      if (this.cardNumber - 1 >= 0) {
+        this.cardNumber--;
+        this.cardSide = 0;
+      }
     },
     hint: function () {
       let hintLetter = this.$parent.flashcards[this.cardNumber].answer.charAt(0);
