@@ -9,7 +9,7 @@
         <button class="p-5" v-on:click="previous">Previous</button>
         <button class="p-5" v-on:click="flip">Flip</button>
         <button class="p-5" v-on:click="next">Next</button>
-        <button class="p-5 pl-10" v-on:click="hint">Stuck? Get a hint.</button>
+        <button class="p-5 pl-10" v-if="this.hintUsed === false && this.cardSide == 0" v-on:click="hint">Stuck? Get a hint.</button>
       </div>
     </div>
   </div>
@@ -21,7 +21,8 @@ export default {
   data() {
     return {
       cardNumber: 0,
-      cardSide: 0
+      cardSide: 0,
+      hintUsed: false
     }
   },
   methods: {
@@ -52,6 +53,7 @@ export default {
 
       let newQuestion = question.substr(0, hintLetterLocation) + hintLetter + question.substr(hintLetterLocation, question.length)
       this.$parent.flashcards[this.cardNumber].question = newQuestion;
+      this.hintUsed = true;
     }
   }
 }
