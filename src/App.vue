@@ -17,7 +17,10 @@ export default {
       inputText: "",
       flashcards: [
         { question: "this is a test 1", answer: "answer 1" },
-        { question: "this is a test 2", answer: "answer 2" }
+        { question: "this is a test 2", answer: "answer 2" },
+        { question: "this is a test 3", answer: "answer 3" },
+        { question: "this is a test 4", answer: "answer 4" },
+        { question: "this is a test 5", answer: "answer 5" },
       ]
     }
   },

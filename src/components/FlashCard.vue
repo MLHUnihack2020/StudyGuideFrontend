@@ -1,6 +1,8 @@
 <template>
   <div class="">
-    <span>{{ cardText }}</span>
+    <span v-if="cardSide == 0">{{ this.$parent.flashcards[cardNumber].question }}</span>
+    <span v-if="cardSide == 1">{{ this.$parent.flashcards[cardNumber].answer }}</span>
+    <button v-on:click="previous">Previous</button>
     <button v-on:click="flip">Flip</button>
     <button v-on:click="next">Next</button>
   </div>
@@ -26,7 +28,10 @@ export default {
       }
     },
     next: function () {
-      
+      this.cardNumber++;
+    },
+    previous: function () {
+      this.cardNumber--;
     }
   }
 }

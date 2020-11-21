@@ -14,18 +14,18 @@ export default {
     sendRequest: function () {
       const input = this.$parent.inputText;
 
-      const endpoint = "https://studyguide-backend-nwitjszpka-ue.a.run.app/";
+      // const endpoint = "https://studyguide-backend-nwitjszpka-ue.a.run.app/";
+      const endpoint = "http://localhost:8080/";
 
-      const jsonBody = {
-        text: input
-      }
+      const jsonBody = { text: input };
+      const stringed = JSON.stringify(jsonBody);
 
       fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(jsonBody),
+        body: JSON.stringify(stringed),
       })
       .then(response => response.json())
       .then(data => {
