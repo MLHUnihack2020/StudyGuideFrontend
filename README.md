@@ -1,4 +1,4 @@
-# studyguide-frontend
+# StudyGuideFrontend
 
 ## Project setup
 ```
