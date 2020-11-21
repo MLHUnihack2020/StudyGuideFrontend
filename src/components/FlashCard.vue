@@ -37,6 +37,7 @@ export default {
       if (this.cardNumber + 1 < this.$parent.flashcards.length) {
         this.cardNumber++;
         this.cardSide = 0;
+        this.hintUsed = false;
       }
     },
     previous: function () {
