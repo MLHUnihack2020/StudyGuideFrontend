@@ -1,13 +1,13 @@
 <template>
   <div class="">
-    <p class="my-5 text-lg">Paste in your text that you want to study below:</p>
+    <p class="my-5 text-xl">Generate studying questions by pasting below.</p>
 
     <div>
-      <textarea class="shadow-lg p-5 rounded-lg" id="inputText" name="inputText" rows="10" cols="70" v-model="$parent.inputText"></textarea>
+      <textarea class="shadow-xl p-5 rounded-lg w-full h-72" id="inputText" name="inputText" v-model="$parent.inputText"></textarea>
     </div>
     <div>
-      <button class="text-lg shadow-md px-3 py-2 rounded-lg font-bold m-10" v-on:click="sendRequest">Submit</button>
-      <button class="text-lg shadow-md px-3 py-2 rounded-lg font-bold m-10" v-on:click="setExample">Get an example passage</button>
+      <button class="text-lg shadow-md px-3 py-2 rounded-lg font-bold m-5" v-on:click="sendRequest">Submit text</button>
+      <button class="text-lg shadow-md px-3 py-2 rounded-lg font-bold m-5" v-on:click="setExample">Get an example passage</button>
     </div>
   </div>
 </template>

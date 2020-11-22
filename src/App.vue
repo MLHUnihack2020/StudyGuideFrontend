@@ -1,10 +1,10 @@
 <template>
-  <div class="m-16 flex" id="app">
-    <div>
-      <h1 class="text-6xl font-bold">Studyguide Generator</h1>
+  <div class="flex flex-row" id="app">
+    <div class="flex-1 p-10">
+      <h1 class="text-8xl font-bold">Study Generator</h1>
       <ContentSubmit />
     </div>
-    <div>
+    <div class="flex-1 p-10">
       <FlashCard v-if="flashcards !== null" />
     </div>
   </div>

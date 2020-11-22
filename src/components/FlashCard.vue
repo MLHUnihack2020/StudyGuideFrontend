@@ -1,19 +1,16 @@
 <template>
-  <div class="flex h-screen">
-    <div class="shadow-lg p-5 rounded-lg w-auto h-64 w-24 m-auto mx-10">
+  <div class="shadow-xl rounded-lg p-10 h-72 mt-64">
       <div>
-        <p v-if="cardSide == 0">{{ this.$parent.flashcards[cardNumber].question }}</p>
-        <p v-if="cardSide == 1">{{ this.$parent.flashcards[cardNumber].answer }}</p>
+        <p class="text-center text-xl" v-if="cardSide == 0">{{ this.$parent.flashcards[cardNumber].question }}</p>
+        <p class="text-center text-xl" v-if="cardSide == 1">{{ this.$parent.flashcards[cardNumber].answer }}</p>
       </div>
-      <div>
-        <button class="p-5" v-on:click="previous">Previous</button>
-        <button class="p-5" v-on:click="flip">Flip</button>
-        <button class="p-5" v-on:click="next">Next</button>
-        <button class="p-5" v-on:click="shuffle">Shuffle</button>
-        <button class="p-5 pl-10" v-if="this.hintUsed === false && this.cardSide == 0" v-on:click="hint">Stuck? Get a hint.</button>
+      <div class="">
+        <button class="font-bold p-5" v-on:click="previous">Previous</button>
+        <button class="font-bold p-5" v-on:click="flip">Flip</button>
+        <button class="font-bold p-5" v-on:click="next">Next</button>
+        <button class="font-bold p-5" v-if="this.hintUsed === false && this.cardSide == 0" v-on:click="hint">Stuck? Get a hint.</button>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
