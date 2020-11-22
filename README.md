@@ -22,4 +22,4 @@ We built StudyGenerator.com in order to help students more efficiently learn inf
 - Google Cloud Storage - upload PDFs created when print option is selected
 
 # More
-Find out more at https://youtu.be/kMmOK7b4F3I. 
+View our presentation [here](https://youtu.be/kMmOK7b4F3I).
