@@ -1,6 +1,6 @@
 # Study Generator
 
-Study Generator Web App @ studygenerator.com
+Study Generator Web App @ [studygenerator.com](https://www.studygenerator.com).
 
 -----------------------------------------
 
