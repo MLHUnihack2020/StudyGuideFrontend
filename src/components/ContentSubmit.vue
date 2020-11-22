@@ -8,6 +8,7 @@
     <div>
       <button class="text-lg shadow-md px-3 py-2 rounded-lg font-bold m-5" v-on:click="sendRequest">Submit text</button>
       <button class="text-lg shadow-md px-3 py-2 rounded-lg font-bold m-5" v-on:click="setExample">Get an example passage</button>
+      <button class="text-lg shadow-md px-3 py-2 rounded-lg font-bold m-5" v-on:click="printQuestions">Print questions</button>
     </div>
   </div>
 </template>
@@ -51,6 +52,30 @@ export default {
         }
 
         this.$parent.flashcards = tempFlashcards;
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    },
+    printQuestions: function () {
+      const input = this.$parent.inputText;
+
+      const endpoint = "https://studyguide-backend-nwitjszpka-ue.a.run.app/pdf";
+
+      const jsonBody = { text: input };
+      const stringed = JSON.stringify(jsonBody);
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: stringed,
+      })
+      .then(response => response.json())
+      .then(data => {
+        let pdfLink = data.pdfDownload;
+        window.open(pdfLink);
       })
       .catch((error) => {
         console.error('Error:', error);
