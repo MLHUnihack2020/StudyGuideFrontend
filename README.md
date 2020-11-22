@@ -4,7 +4,7 @@ Study Generator Web App @ studygenerator.com
 
 -----------------------------------------
 
-The frontend serves the user separately from the backend. The frontend of Study Generator holds all the UI content including the several flashcard features, such as shuffle and hints. One of the primary goals while developing this product was to emphasize simplicity and minimalism and we are fairly confident that we achieved just that to provide a delightful user experience to be an efficient product - paste, click, and study! If you want to learn more about our backend, click here!
+The frontend serves the user separately from the backend. The frontend of Study Generator holds all the UI content including the several flashcard features, such as shuffle and hints. One of the primary goals while developing this product was to emphasize simplicity and minimalism and we are fairly confident that we achieved just that to provide a delightful user experience to be an efficient product - paste, click, and study! If you want to learn more about our backend, click [here](https://github.com/MLHUnihack2020/StudyGuideBackend)!
  
 # Goals
 
