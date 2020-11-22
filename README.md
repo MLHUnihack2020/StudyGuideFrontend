@@ -1,24 +1,18 @@
-# StudyGuideFrontend
+# Study Generator
 
-## Project setup
-```
-npm install
-```
+Study Generator Web App
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# Goals
 
-### Compiles and minifies for production
-```
-npm run build
-```
+We built StudyGenerator.com in order to help students more efficiently learn information. Instead of having to go through and make their own review, StudyGenerator goes through the text and generates flashcards for you, so you can quiz yourself to make sure you are understanding and comprehending the content.
 
-### Lints and fixes files
-```
-npm run lint
-```
+# Tech Stack
+## Frontend:
+- Vue.js
+- TailwindCSS
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Backend:
+- NodeJS
+- Google Cloud Run
+- Google Cloud Natural Language Processing API
+- Google Cloud Storage
