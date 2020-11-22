@@ -8,11 +8,11 @@ We built StudyGenerator.com in order to help students more efficiently learn inf
 
 # Tech Stack
 ## Frontend:
-- Vue.js
-- TailwindCSS
+- Vue.js - making the UI
+- TailwindCSS - stylize the UI
 
 ## Backend:
-- NodeJS
-- Google Cloud Run
-- Google Cloud Natural Language Processing API
-- Google Cloud Storage
+- NodeJS - write algorithms and logic
+- Google Cloud Run - run the backend API as requests 
+- Google Cloud Natural Language Processing API - extract keywords 
+- Google Cloud Storage - upload PDFs created when print option is selected
