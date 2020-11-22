@@ -1,7 +1,8 @@
 <template>
   <div class="shadow-xl rounded-lg p-10 h-72 mt-64">
       <div>
-        <p class="text-center text-xl" v-if="cardSide == 0">{{ this.$parent.flashcards[cardNumber].question }}</p>
+        <p class="text-center text-xl" v-if="cardSide == 0 && this.newQuestion.length == 0">{{ this.$parent.flashcards[cardNumber].question }}</p>
+        <p class="text-center text-xl" v-if="cardSide == 0 && this.newQuestion.length != 0">{{ this.newQuestion }}</p>
         <p class="text-center text-xl" v-if="cardSide == 1">{{ this.$parent.flashcards[cardNumber].answer }}</p>
       </div>
       <div class="">
@@ -21,7 +22,8 @@ export default {
     return {
       cardNumber: 0,
       cardSide: 0,
-      hintUsed: false
+      hintUsed: false,
+      newQuestion: ""
     }
   },
   methods: {
@@ -37,22 +39,23 @@ export default {
         this.cardNumber++;
         this.cardSide = 0;
         this.hintUsed = false;
+        this.newQuestion = "";
       }
     },
     previous: function () {
       if (this.cardNumber - 1 >= 0) {
         this.cardNumber--;
         this.cardSide = 0;
+        this.newQuestion = "";
       }
     },
     hint: function () {
       let hintLetter = this.$parent.flashcards[this.cardNumber].answer.charAt(0);
       let hintLetterLocation = this.$parent.flashcards[this.cardNumber].question.indexOf('_');
 
-      let question = this.$parent.flashcards[this.cardNumber].question
+      let question = this.$parent.flashcards[this.cardNumber].question;
 
-      let newQuestion = question.substr(0, hintLetterLocation) + hintLetter + question.substr(hintLetterLocation, question.length)
-      this.$parent.flashcards[this.cardNumber].question = newQuestion;
+      this.newQuestion = question.substr(0, hintLetterLocation) + hintLetter + question.substr(hintLetterLocation, question.length);
       this.hintUsed = true;
     },
     shuffle: function() {
