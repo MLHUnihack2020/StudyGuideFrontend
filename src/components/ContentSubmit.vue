@@ -20,7 +20,7 @@ export default {
     sendRequest: function () {
       const input = this.$parent.inputText;
 
-      const endpoint = "https://api.studygenerator.com/";
+      const endpoint = "https://studyguide-backend-nwitjszpka-ue.a.run.app/";
       // const endpoint = "http://localhost:8080/";
 
       const jsonBody = { text: input };
@@ -60,7 +60,7 @@ export default {
     printQuestions: function () {
       const input = this.$parent.inputText;
 
-      const endpoint = "https://api.studygenerator.com/pdf";
+      const endpoint = "https://studyguide-backend-nwitjszpka-ue.a.run.app/pdf";
 
       const jsonBody = { text: input };
       const stringed = JSON.stringify(jsonBody);
